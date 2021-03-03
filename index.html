@@ -14,7 +14,7 @@
 
 <body>
     <!--Show the app here.-->
-    <div id="container" class="section"></div>
+    <div id="container" class="box"></div>
 
     <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script> -->
 </body>
@@ -278,6 +278,23 @@ this.CreateNew = function (oButton) {
 
 // ****** OPERATIONS END.
 }
+
+// HANDLING MOBILE-RESPONSIVENESS **Debugging current browser compatibility issue**
+const containerRes = document.querySelectorAll('.containerRes');
+
+
+const myObserver = new ResizeObserver(entries => {
+ for (let entry of entries => {
+    const mainContent = entry.target.querySelector('.containerRes');
+    const width = Math.floor(entry.contentRect.width);
+    const height = Math.floor(entry.contentRect.height);
+  });
+});
+
+containerRes.forEach(containerRes => {
+    myObserver.observe(containerRes);
+});
+
 
 crudApp.createTable();
 </script>
